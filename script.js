@@ -97,11 +97,14 @@ $(document).ready(function() {
     });
 
     chatbotMinimize.addEventListener('click', () => {
-        if (chatbotWindow.style.height === '65px') {
-            chatbotWindow.style.height = '500px';
+        const headerHeight = window.innerWidth <= 480 ? '55px' : '65px';
+        const windowHeight = window.innerWidth <= 480 ? '400px' : (window.innerWidth <= 768 ? '400px' : '450px');
+
+        if (chatbotWindow.style.height === headerHeight) {
+            chatbotWindow.style.height = windowHeight;
             chatbotWindow.querySelector('iframe').style.display = 'block';
         } else {
-            chatbotWindow.style.height = '65px';
+            chatbotWindow.style.height = headerHeight;
             chatbotWindow.querySelector('iframe').style.display = 'none';
         }
     });
