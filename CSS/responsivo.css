@@ -19,7 +19,7 @@
 
     /* Faixa mais baixa no celular (múltiplo de 8) */
     .header {
-        min-height: 320px;
+        height: calc(100vh - 52px);
         padding: 48px 16px;
         margin-top: 52px;
     }
@@ -91,6 +91,12 @@
     .header-titulo {
         letter-spacing: 2px;
         font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+
+    .header {
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+        padding: 32px 16px;
     }
 
     .header-info {

@@ -57,7 +57,7 @@
 .header {
     /* Faixa de ponta a ponta, abaixo do menu fixo */
     margin-top: 56px;
-    min-height: 432px;
+    height: calc(100vh - 56px);
     padding: 64px 24px;
     display: flex;
     flex-direction: column;
