@@ -1,0 +1,100 @@
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    .menu {
+        padding: 16px;
+    }
+
+    .menu-links {
+        gap: 16px;
+    }
+
+    .menu-link {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    /* Faixa mais baixa no celular (múltiplo de 8) */
+    .header {
+        min-height: 320px;
+        padding: 48px 16px;
+        margin-top: 52px;
+    }
+
+    /* Letter-spacing 4px (não múltiplo de 8): necessário para o nome
+       caber na largura de telas pequenas sem quebrar feio */
+    .header-titulo {
+        letter-spacing: 4px;
+    }
+
+    .header-acoes {
+        gap: 8px;
+    }
+
+    .section-titulo {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .container {
+        padding: 48px 16px;
+    }
+
+    .footer-conteudo {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer {
+        padding: 32px 16px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ==============================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 480px) {
+
+    .chatbot-container {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    #chatbot-window {
+        width: calc(100vw - 30px);
+        height: 480px;
+
+        right: 70px;
+        bottom: 0;
+    }
+
+    #chatbot-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    #chatbot-btn img {
+        width: 42px;
+        height: 42px;
+    }
+}

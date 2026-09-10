@@ -1,0 +1,184 @@
+/* ==========================================================================
+   SECAO HEADER
+   
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 32px 64px 32px;
+}
+
+/* 02. MENU DE NAVEGAÇÃO */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    /* Cinza grafite */
+    background-color: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.menu-nome {
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu-links {
+    display: flex;
+    gap: 32px;
+}
+
+.menu-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #d4d4d4;
+}
+
+/* 03. FAIXA DE ABERTURA (HEADER LARGO) */
+.header {
+    /* Faixa de ponta a ponta, abaixo do menu fixo */
+    margin-top: 56px;
+    min-height: 432px;
+    padding: 64px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(180deg, #1e1e1e 0%, #0a0a0a 100%);
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.header-logo {
+    /* Espaço reservado para a logo (96px, múltiplo de 8).
+       Para usar: coloque a tag <img> dentro da div no HTML ou aplique
+       background-image aqui com background-size: contain/cover. */
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    margin-bottom: 24px;
+}
+
+.header-logo-imagem {
+    /* A foto preenche o círculo inteiro, com recorte centralizado */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.header-titulo {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.header-info {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #b4b4b4;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.header-aviso {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 32px;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+}
+
+.header-acoes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   BOTOES HEADER
+   
+   ========================================================================== */
+.btn-three {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #FFF;
+    position: relative;
+}
+
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.btn-three:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+    border-radius: 8px;
+}
+
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}

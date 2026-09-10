@@ -1,0 +1,160 @@
+
+
+/* ==============================
+   CHATBOT
+================================= */
+.chatbot-container {
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    z-index: 9999;
+}
+
+/* ==============================
+   BOTÃO
+================================= */
+#chatbot-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 65px;
+    height: 65px;
+    padding: 0;
+
+    border: 1px solid #444;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+#chatbot-btn:hover {
+    transform: scale(1.05);
+    border-color: #666;
+}
+
+#chatbot-btn img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   JANELA
+================================= */
+
+#chatbot-window {
+    position: absolute;
+
+    right: 75px;
+    bottom: 0;
+
+    width: 350px;
+    height: 500px;
+
+    background: rgba(20, 20, 20, 0.95);
+
+    border: 1px solid #978e8e;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+
+    display: none;
+}
+
+
+/* ==============================
+   CABEÇALHO
+================================= */
+
+.chatbot-header {
+
+    height: 65px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #050505, #1c1c1c);
+    border-bottom: 1px solid #444;
+}
+
+.chatbot-header img {
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+}
+
+.chatbot-header span {
+    flex: 1;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   BOTÃO FECHAR
+================================= */
+
+#chatbot-close {
+    border: none;
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#chatbot-close:hover {
+    color: #fff;
+}
+
+/* ==============================
+   BOTÃO MINIMIZAR
+================================= */
+
+#chatbot-minimize {
+    border: none;
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+#chatbot-minimize:hover {
+    color: #fff;
+}
+
+
+/* ==============================
+   IFRAME
+================================= */
+
+#chatbot-window iframe {
+    width: 100%;
+    height: calc(100% - 65px);
+
+    border: none;
+
+    display: block;
+}
