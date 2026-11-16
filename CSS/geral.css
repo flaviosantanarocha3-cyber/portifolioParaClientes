@@ -25,10 +25,32 @@ body {
     min-height: 100vh;
 }
 
+
 body {
     font-family: 'Anton', sans-serif;
 }
 
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Equivalente a top: 0, right: 0, bottom: 0, left: 0 */
+    pointer-events: none; /* Garante que cliques e toques passem direto para os elementos abaixo */
+    
+    /* Gradiente circular: escuro nas bordas/cantos, clareando/transparente no centro */
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.1) 0%,   /* Centro mais claro/visível */
+        rgba(0, 0, 0, 0.5) 60%,  /* Meio intermediário */
+        rgba(0, 0, 0, 0.9) 100%  /* Cantos e bordas bem escuros (pretos) */
+    );
+    
+    z-index: 1; /* Mantém a camada do gradiente acima da imagem de fundo */
+}
+
+header, section, footer {
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 2;
+}
 
 /* 01.FONTES */
 h1 {
