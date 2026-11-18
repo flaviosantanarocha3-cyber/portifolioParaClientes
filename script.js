@@ -32,27 +32,15 @@ $(document).ready(function() {
     // =========================
     // SCROLLREVEAL - ANIMAÇÕES
     // =========================
-    
-    // Animação das seções principais
-    ScrollReveal().reveal('header', {
-        duration: 2000,          // Duração da animação em ms
-        distance: '20%',         // Distância do deslocamento
-        origin: 'left',          // Direção da animação
-        reset: false,            // Não repete a animação ao rolar de volta
-        opacity: 0,              // Começa invisível
-        delay: 200,              // Pequeno delay antes de começar
-        easing: 'ease-in-out'    // Tipo de curva de animação
-    });
-
     // Animação das seções principais
     ScrollReveal().reveal('section', {
-        duration: 2000,          // Duração da animação em ms
-        distance: '20%',         // Distância do deslocamento
-        origin: 'left',          // Direção da animação
-        reset: false,            // Não repete a animação ao rolar de volta
-        opacity: 0,              // Começa invisível
-        delay: 200,              // Pequeno delay antes de começar
-        easing: 'ease-in-out'    // Tipo de curva de animação
+        duration: 2000,          
+        distance: '20%',         
+        origin: 'left',          
+        reset: false,          
+        opacity: 0,              
+        delay: 200,              
+        easing: 'ease-in-out'    
     });
 
     // Animação dos títulos

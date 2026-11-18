@@ -25,6 +25,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    
 }
 
 .card {
@@ -33,6 +34,10 @@
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     border: 1px solid #2e2e2e;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
 }
 
 .card:hover {
@@ -53,6 +58,8 @@
     font-weight: 500;
     letter-spacing: 2px;
     border-bottom: 1px dashed #3a3a3a;
+    
+    
 }
 
 .projeto-placeholder img {
@@ -68,9 +75,10 @@
 
 .projeto-conteudo {
     padding: 24px;
+    gap: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    flex: 1;
 }
 
 .projeto-nome {
@@ -78,16 +86,21 @@
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 8px;
+    text-align: justify;
+    letter-spacing: 2px;
 }
 
 .projeto-descricao {
-    font-size: 0.9rem;
-    color: #8a8a8a;
-    line-height: 1.5;
     
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.5;
     text-align: justify;
+    min-height: 145px;
+    letter-spacing: 1px;
+    
 }
-
+    
 .projeto-botao {
     display: inline-block;
     padding: 16px 24px;
@@ -101,6 +114,8 @@
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+     margin-top: auto;
+    
 }
 
 .projeto-botao:hover {
