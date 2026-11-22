@@ -264,7 +264,7 @@
     }
 
     .projetos-grid {
-       
+
         grid-template-columns: 1fr !important;
         gap: 24px;
     }
@@ -280,8 +280,14 @@
    360px - Celulares muito pequenos (base sugerida)
    ========================================= */
 @media (max-width: 360px) {
+
+    body {
+        overflow-x: hidden;
+        padding: 0 auto;
+    }
+
     .menu {
-        padding: 10px 12px;
+        padding: .625rem .75rem;
     }
 
     .menu-nome {
