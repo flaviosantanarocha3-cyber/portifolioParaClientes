@@ -1,17 +1,61 @@
+//* ==========================================================================
+10. RESPONSIVIDADE (MEDIA QUERIES) Sequência: 1200px ->991px ->768px ->560px ->480px ->360px==========================================================================*/
+/* =========================================
+   1200px - Telas grandes / Notebooks menores
+   ========================================= */
+@media (max-width: 1200px) {
+    .container {
 
+        padding: 4rem 3.125rem;
+    }
 
+    .projetos-grid {
+        gap: 1.5rem;
+    }
+}
 
-/* ==========================================================================
-   RESPONSIVO
-   ========================================================================== */
+/* =========================================
+   991px - Tablets em modo paisagem / Laptops
+   ========================================= */
+@media (max-width: 991px) {
+    .container {
+
+        padding: 3.5rem 1.5rem;
+    }
+
+    .section-titulo {
+        font-size: 2rem;
+    }
+
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .contato-conteudo {
+        grid-template-columns: 1fr 1fr;
+        /* REPETIDO: gap: 32px já usado no .menu-links (parte 2) e repetido em 768px */
+        gap: 32px;
+    }
+}
+
+/* =========================================
+   768px - Tablets em modo retrato / Celulares grandes
+   ========================================= */
 @media (max-width: 768px) {
 
+    .container {
+        padding: 3rem 1rem;
+    }
+
     .menu {
-        padding: 16px;
+
+        padding: 1rem;
     }
 
     .menu-links {
-        gap: 16px;
+
+        gap: 1rem;
     }
 
     .menu-link {
@@ -19,21 +63,19 @@
         letter-spacing: 1px;
     }
 
-    /* Faixa mais baixa no celular (múltiplo de 8) */
-    .header {
+    .hero {
         height: calc(100vh - 52px);
-        padding: 48px 16px;
+        padding: 3rem 1.375rem;
         margin-top: 52px;
     }
 
-    /* Letter-spacing 4px (não múltiplo de 8): necessário para o nome
-       caber na largura de telas pequenas sem quebrar feio */
-    .header-titulo {
+    .hero-titulo {
         letter-spacing: 4px;
     }
 
-    .header-acoes {
-        gap: 8px;
+    .hero-acoes {
+
+        gap: .5rem;
     }
 
     .section-titulo {
@@ -42,17 +84,9 @@
     }
 
     .projetos-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px;
-    }
 
-    .contato-conteudo {
         grid-template-columns: 1fr !important;
-        gap: 32px;
-    }
 
-    .container {
-        padding: 48px 16px;
     }
 
     .footer {
@@ -60,20 +94,121 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .projetos-grid {
-        grid-template-columns: repeat(2, 1fr);
+/* =========================================
+   560px - Celulares menores
+   ========================================= */
+@media (max-width: 560px) {
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .menu-links {
+        gap: .75rem;
+    }
+
+    .menu-link {
+        font-size: 0.7rem;
+    }
+
+    .hero {
+
+        padding: 2rem 1rem;
+    }
+
+    .hero-titulo {
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-acoes {
+        flex-direction: column;
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .section-titulo {
+
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .projetos-grid,
+    .contato-conteudo {
+        gap: 16px;
     }
 
     .contato-conteudo {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
+        display: flex;
+        /* Use 'column' para rede social em cima / form embaixo,
+       ou 'column-reverse' para inverter a ordem */
+        flex-direction: column;
+        gap: 24px;
+        /* REPETIDO: gap: 24px já usado em outros blocos e breakpoints */
+        width: 100%;
+    }
+
+    .contato-info-titulo,
+    .contato-info-texto {
+        display: none;
+    }
+
+    /* =========================================
+   560px - AJUSTE DA SEÇÃO CONTATO
+   ========================================= */
+    @media (max-width: 560px) {
+
+        .contato-conteudo {
+            grid-template-columns: 1fr !important;
+            gap: 24px;
+        }
+
+        .contato-info-titulo,
+        .contato-info-texto {
+            display: none;
+        }
+
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /* REPETIDO: gap: 16px segue o padrão do grid de 8px */
+            width: 100%;
+            min-width: 0;
+        }
+
+        .contato-acoes {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            /* REPETIDO: gap: 16px igual ao de .contato-info acima */
+            width: 100%;
+        }
+
+        .contato-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /* REPETIDO: gap: 16px repetido em .contato-info e .contato-acoes */
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    .footer {
+
+        padding: 1rem;
     }
 }
 
+/* =========================================
+   480px - Celulares compactos
+   ========================================= */
 @media (max-width: 480px) {
     .menu {
-        padding: 12px 16px;
+
+        padding: .75rem 1rem;
     }
 
     .menu-nome {
@@ -82,7 +217,7 @@
     }
 
     .menu-links {
-        gap: 12px;
+        gap: .75rem;
     }
 
     .menu-link {
@@ -90,23 +225,25 @@
         letter-spacing: 0.5px;
     }
 
-    .header-titulo {
+    .hero-titulo {
+
         letter-spacing: 2px;
         font-size: clamp(1.8rem, 8vw, 2.4rem);
     }
 
-    .header {
+
+    .hero {
         height: calc(100vh - 60px);
         margin-top: 60px;
-        padding: 32px 16px;
+        padding: 2rem 1rem;
     }
 
-    .header-info {
+    .hero-info {
         font-size: 0.85rem;
         letter-spacing: 1px;
     }
 
-    .header-aviso {
+    .hero-aviso {
         font-size: 0.8rem;
         padding: 6px 16px;
     }
@@ -117,22 +254,65 @@
     }
 
     .section-titulo {
+
         font-size: 1.5rem;
-        letter-spacing: 1px;
+        letter-spacing: 1.1px;
     }
 
     .contato-info-titulo {
-
         text-align: center;
     }
 
     .projetos-grid {
+       
         grid-template-columns: 1fr !important;
         gap: 24px;
     }
 
     .contato-conteudo {
+        /* REPETIDO: grid-template-columns: 1fr e gap: 24px (com !important repetido do bloco acima) */
         grid-template-columns: 1fr !important;
         gap: 24px;
+    }
+}
+
+/* =========================================
+   360px - Celulares muito pequenos (base sugerida)
+   ========================================= */
+@media (max-width: 360px) {
+    .menu {
+        padding: 10px 12px;
+    }
+
+    .menu-nome {
+        font-size: 0.78rem;
+    }
+
+    .menu-links {
+
+        gap: .5rem;
+    }
+
+    .menu-link {
+        padding: 6px 10px;
+        font-size: 0.6rem;
+    }
+
+    .hero {
+        padding: 1.5rem .75rem;
+    }
+
+    .hero-titulo {
+        font-size: 1.5rem;
+        letter-spacing: .0688rem;
+    }
+
+    .btn-three {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+    }
+
+    .section-titulo {
+        font-size: 1.35rem;
     }
 }

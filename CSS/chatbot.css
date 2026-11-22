@@ -51,6 +51,20 @@
    JANELA
 ================================= */
 
+/* Área maior para o chat */
+#chatbot-window {
+    height: 600px;
+    max-height: calc(100vh - 100px);
+}
+
+/* O iframe ocupa o espaço abaixo do cabeçalho de 65px */
+#chatbot-window iframe {
+    display: block;
+    width: 100%;
+    height: calc(100% - 65px);
+    border: 0;
+}
+
 #chatbot-window {
     position: absolute;
 

@@ -1,73 +1,145 @@
-
 /* ==========================================================================
    PORTFÓLIO PARA CLIENTES — Flavio Santana
-   
    ========================================================================== */
+
+/* 00. VARIÁVEIS DE CORES */
+:root {
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #141414;
+    --color-bg-tertiary: #1a1a1a;
+    --color-text-primary: #ffffff;
+    --color-accent: #3265ea;
+
+    /* Overlays (Gradiente radial do body::before) */
+    --overlay-light: rgba(0, 0, 0, 0.1);
+    --overlay-medium: rgba(0, 0, 0, 0.5);
+    --overlay-dark: rgba(0, 0, 0, 0.9);
+}
 
 /* 01. RESET E BASE */
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 100%;
+    font-family: 'Anton', sans-serif;
 }
 
 body {
     /* Degradê neutro da própria paleta (grafite -> preto) */
-    background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
-    background-color: #0a0a0a;
-    color: #ffffff;
+    background: linear-gradient(135deg,
+            var(--color-bg-primary) 0%,
+            var(--color-bg-secondary) 50%,
+            var(--color-bg-tertiary) 100%);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     min-height: 100vh;
-}
-
-
-body {
-    font-family: 'Anton', sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
 }
 
 body::before {
     content: '';
     position: absolute;
-    inset: 0; /* Equivalente a top: 0, right: 0, bottom: 0, left: 0 */
-    pointer-events: none; /* Garante que cliques e toques passem direto para os elementos abaixo */
-    
-    /* Gradiente circular: escuro nas bordas/cantos, clareando/transparente no centro */
-    background: radial-gradient(
-        circle at center,
-        rgba(0, 0, 0, 0.1) 0%,   /* Centro mais claro/visível */
-        rgba(0, 0, 0, 0.5) 60%,  /* Meio intermediário */
-        rgba(0, 0, 0, 0.9) 100%  /* Cantos e bordas bem escuros (pretos) */
-    );
-    
-    z-index: 1; /* Mantém a camada do gradiente acima da imagem de fundo */
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center,
+            var(--overlay-light) 0%,
+            var(--overlay-medium) 60%,
+            var(--overlay-dark) 100%);
+    z-index: 1;
 }
 
-header, section, footer {
-    position: relative; /* Necessário para o z-index funcionar */
+/* 02. ESTRUTURA E CAMADAS (Z-INDEX) */
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+header {
+    
+    z-index: 6;
+}
+
+
+section,
+footer {
+    position: relative;
     z-index: 2;
 }
 
-/* 01.FONTES */
+
+/* 03. TIPOGRAFIA */
 h1 {
-    font-family: 'Anton', sans-serif;
+    
     font-size: 4rem;
     font-weight: 400;
 }
 
-
 h2 {
-    font-family: 'Anton', sans-serif;
+    
     font-size: 2.5rem;
     font-weight: 400;
 }
 
 p {
+    
     font-family: 'Anton', sans-serif;
-    font-size: 1rem;
     line-height: 1.6;
+}
+
+/* 04. MÍDIA E LISTAS */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* 05. LINKS, FORMULÁRIOS E INTERATIVIDADE */
+textarea {
+    resize: vertical;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* TRANSIÇÃO SUAVE PADRÃO */
+a,
+button,
+input,
+textarea,
+select {
+    
+    transition: all 0.3s ease;
+    font: inherit;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+/* CURSOR PADRÃO PARA ELEMENTOS CLICÁVEIS */
+button,
+a,
+input[type="submit"],
+input[type="button"] {
+
+    cursor: pointer;
+    user-select: none;
 }

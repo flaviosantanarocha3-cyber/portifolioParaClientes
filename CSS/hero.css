@@ -1,11 +1,24 @@
-
 /* ==========================================================================
-   HERO
-   
+   07. SEÇÃO HERO / FAIXA DE ABERTURA
    ========================================================================== */
-/* 03. FAIXA DE ABERTURA (HEADER LARGO) */
+
+/* Variáveis adicionais desta seção (unir ao :root principal quando juntar os arquivos) */
+:root {
+    --color-hero-top: #1e1e1e;
+    --color-border-muted: #3a3a3a;
+    --color-text-muted: #b4b4b4;
+    --color-text-soft: #d4d4d4;
+    --color-text-stroke: rgb(51, 51, 51);
+    --color-glass-light: rgba(255, 255, 255, 0.1);
+    --color-glass-border: rgba(255, 255, 255, 0.5);
+    --shadow-title-glow: rgba(0, 0, 0, 0.16) 0px 1px 4px, var(--color-text-stroke) 0px 0px 0px 3px;
+    --shadow-btn-neon: 0 0 5px var(--color-accent),
+        0 0 10px var(--color-accent),
+        0 0 20px var(--color-accent),
+        0 0 40px var(--color-accent);
+}
+
 .hero {
-    /* Faixa de ponta a ponta, abaixo do menu fixo */
     margin-top: 56px;
     height: calc(100vh - 56px);
     padding: 64px 24px;
@@ -14,93 +27,109 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    background: linear-gradient(180deg, #1e1e1e 0%, #0a0a0a 100%);
-    border-bottom: 1px solid #2e2e2e;
+    background: linear-gradient(180deg, var(--color-hero-top) 0%, var(--color-bg-primary) 100%);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .hero-logo {
-    /* Espaço reservado para a logo (96px, múltiplo de 8).
-       Para usar: coloque a tag <img> dentro da div no HTML ou aplique
-       background-image aqui com background-size: contain/cover. */
     width: 96px;
     height: 96px;
-    border-radius: 50%;
-    background-color: #1a1a1a;
-    border: 1px solid #3a3a3a;
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-muted);
+
+}
+
+.hero-logo, .hero-logo-imagem {
+
+     border-radius: 50%;
+
+}
+
+.hero-logo,
+.hero-info,.btn-three {
+
     margin-bottom: 24px;
+     letter-spacing: 2px;
 }
 
 .hero-logo-imagem {
-    /* A foto preenche o círculo inteiro, com recorte centralizado */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+
 }
 
-.hero-titulo {
-    font-family: 'Anton', sans-serif;
+.hero-titulo,
+span {
+    
     font-size: clamp(2.4rem, 7vw, 5rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-text-primary);
     letter-spacing: 8px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
+    text-shadow: var(--shadow-title-glow);
+}
+
+.hero-titulo span {
+
+    color: var(--color-accent);
 }
 
 .hero-info {
     font-size: 1rem;
-    font-weight: 600;
-    color: #b4b4b4;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
+    color: var(--color-text-muted);
 }
 
 .hero-aviso {
     display: inline-block;
     padding: 8px 24px;
-    background-color: #1a1a1a;
-    border: 1px solid #3a3a3a;
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-muted);
     border-radius: 32px;
-    color: #d4d4d4;
+    color: var(--color-text-soft);
     font-size: 0.95rem;
-    font-weight: 600;
+   
     letter-spacing: 1px;
     margin-bottom: 32px;
 }
 
+.hero-info, .hero-aviso, .btn-three {
+    font-weight: 600;
+}
+
 .hero-acoes {
     display: flex;
-    gap: 16px;
+
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 /* ==========================================================================
-   BOTOES HEADER
-   
+   08. BOTÕES DO HERO
    ========================================================================== */
 
 .btn-projeto {
-    border: 2px solid #ffd700;
-    box-shadow: 0 0 5px #ffd700,
-                0 0 10px #ffd700,
-                0 0 20px #ffd700;
+    box-shadow: var(--shadow-btn-neon);
 }
 
 .btn-three {
     display: inline-block;
-    padding: 16px 32px;
-    border-radius: 8px;
+    padding: 1rem 3.125rem;
+    
     font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-decoration: none;
     text-align: center;
-    transition: all 0.3s ease;
-    color: #FFF;
+    color: var(--color-text-primary);
     position: relative;
+}
+
+.btn-three::before, .btn-three::after {
+
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
 }
 
 .btn-three::before {
@@ -108,12 +137,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s;
-    border-radius: 8px;
+    background-color: var(--color-glass-light);
+    
 }
 
 .btn-three:hover::before {
@@ -126,14 +151,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
     opacity: 0;
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--color-glass-border);
     transform: scale(1.2, 1.2);
-    border-radius: 8px;
+   
 }
 
 .btn-three:hover::after {
