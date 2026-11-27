@@ -111,7 +111,14 @@ span {
    ========================================================================== */
 
 .btn-projeto {
+
     box-shadow: var(--shadow-btn-neon);
+
+}
+
+.box-btn-pagina {
+
+    padding-top: 2.5rem;
 }
 
 .btn-three {
